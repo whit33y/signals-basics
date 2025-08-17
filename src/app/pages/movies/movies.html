@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Twoja biblioteka filmów obejrzanych: ({{movieService.countMovies()}})</h1>
+    <div class="form" [formGroup]="movieForm">
+        <label for="title">Tytuł:</label>
+        <input type="text" name="title" formControlName="title">
+        <label for="genre">Kategoria:</label>
+        <input type="text" name="genre" formControlName="genre">
+        <label for="rating">Ocena:</label>
+        <select name="rating" formControlName="rating">
+            <option [value]="1">1</option>
+            <option [value]="2">2</option>
+            <option [value]="3">3</option>
+            <option [value]="4">4</option>
+            <option [value]="5">5</option>
+        </select>
+        <button [disabled]="movieForm.invalid"
+            (click)="addMovie(movieForm.value.title!, movieForm.value.genre!, movieForm.value.rating!)">
+            Dodaj film
+        </button>
+    </div>
+    <div class="reset-button">
+        <button (click)="movieService.resetMovies()">Zresetuj biblioteke filmów</button>
+    </div>
+    <div class="content">
+        <ul>
+            @for(movie of movieService.movies(); track movie.id){
+            <li class="list-element">
+                {{movie.title}} ({{movie.genre}}) ocena: {{movie.rating}}/5
+            </li>
+            }
+        </ul>
+    </div>
+</div>

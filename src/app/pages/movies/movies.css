@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  width: 40dvh;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.reset-button {
+  width: 40dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.list-element {
+  list-style: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  border: 1px solid #111;
+  margin-top: 10px;
+}
